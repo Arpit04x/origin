@@ -1,0 +1,220 @@
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    /* Full viewport height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 80px;
+    /* Space for navbar */
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            rgba(2, 3, 5, 0.4) 0%,
+            rgba(2, 3, 5, 0.8) 60%,
+            var(--color-bg) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.hero-text {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 16px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    color: var(--color-accent-cyan);
+    margin-bottom: 2rem;
+    backdrop-filter: blur(4px);
+}
+
+.hero-section h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    color: white;
+}
+
+.hero-sub {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.hero-trust {
+    display: flex;
+    gap: 2rem;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Glass Card Hero Visual */
+.glass-card-hero {
+    width: 380px;
+    background: rgba(20, 25, 40, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    transform: perspective(1000px) rotateX(10deg);
+    will-change: transform;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+
+.label {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 4px;
+}
+
+.balance {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: white;
+    font-family: var(--font-sans);
+}
+
+.growth-badge {
+    background: rgba(16, 185, 129, 0.2);
+    color: #34D399;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.mini-chart {
+    margin-bottom: 24px;
+    height: 60px;
+}
+
+.hero-sparkline {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.hero-sparkline path {
+    filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5));
+}
+
+.card-row {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.row-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+}
+
+.icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.row-text {
+    flex: 1;
+    text-align: left;
+}
+
+.row-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: white;
+}
+
+.row-sub {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
+
+.row-val {
+    font-weight: 600;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+
+    .hero-visual {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .glass-card-hero {
+        width: 100%;
+        max-width: 340px;
+    }
+}

@@ -1,0 +1,118 @@
+.showcase-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.showcase-section {
+    padding: 8rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.showcase-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.showcase-section.reverse .showcase-inner {
+    direction: rtl;
+    /* Simple way to swap grid columns visual order, but keep text ltr */
+}
+
+.showcase-section.reverse .showcase-content {
+    direction: ltr;
+}
+
+.showcase-section.reverse .showcase-visual {
+    direction: ltr;
+}
+
+.showcase-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, #fff, #9CA3AF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.showcase-content p {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+.feature-list {
+    list-style: none;
+    margin-bottom: 2.5rem;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    color: var(--color-text);
+}
+
+.check-icon {
+    color: var(--color-accent-blue);
+}
+
+.showcase-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.showcase-img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--glass-border);
+    position: relative;
+    z-index: 2;
+}
+
+.glow-behind {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+    filter: blur(40px);
+    z-index: 1;
+}
+
+@media (max-width: 900px) {
+    .showcase-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .showcase-section.reverse .showcase-inner {
+        direction: ltr;
+    }
+
+    .showcase-content {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .showcase-visual {
+        order: 2;
+    }
+
+    .feature-list li {
+        justify-content: center;
+    }
+}
